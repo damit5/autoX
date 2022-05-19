@@ -30,7 +30,7 @@ if __name__ == '__main__':
         domain = sys.argv[1]
         # 先通过域名获取备案号
         res = getRes(domain)
-        beianNumberRegex = re.compile('<a href=".*?" target="_blank">(.*?号)-\d</a>')
+        beianNumberRegex = re.compile('<a href=".*?" target="_blank">(.*?)-\d{1,2}</a>')
         ## 备案号
         beianNumber = beianNumberRegex.findall(res)[0]
 
